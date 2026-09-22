@@ -44,6 +44,12 @@ nav a {
     background-color: white;
     text-align: center;
     text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.2s cubic-bezier(0.1, 0.2, 0.25, 1);
+}
+nav a:hover {
+    background-color: black;
+    border: 1px solid yellow;
     font-size: 1.5rem;
 }
 nav img {
