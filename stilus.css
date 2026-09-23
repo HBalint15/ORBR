@@ -5,6 +5,7 @@
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(20deg, black, darkblue);
 }
 header {
     height: 85vh;
@@ -36,6 +37,7 @@ nav {
     padding: 10px;
     position: sticky;
     top: 0;
+    z-index: 100000000000000;
 }
 nav a {
     display: grid;
@@ -54,4 +56,36 @@ nav a:hover {
 }
 nav img {
     width: 100%;
+}
+article {
+    padding: 20px;
+}
+#story {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+.story-card {
+    border: 2px solid black;
+    min-height: 150px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    background: rgb(255, 255, 255);
+    position: relative;
+}
+.story-card::after {
+    content: "";
+    width: 105%;
+    height: 105%;
+    position: absolute;
+    background: linear-gradient(20deg, red, yellow);
+    z-index: -1;
+}
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size:  1.2rem;
 }
