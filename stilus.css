@@ -6,6 +6,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(20deg, black, darkblue);
+    overflow-x: hidden;
 }
 header {
     height: 85vh;
@@ -53,6 +54,16 @@ nav a:hover {
     background-color: black;
     border: 1px solid yellow;
     font-size: 1.5rem;
+    position: relative;
+}
+nav a:hover::after {
+    position: absolute;
+    background-color: yellow;
+    width: 105%;
+    height: 105%;
+    z-index: -100;
+    content: "";
+    filter: blur(5px);
 }
 nav img {
     width: 100%;
@@ -67,25 +78,62 @@ article {
     gap: 80px;
 }
 .story-card {
-    border: 2px solid black;
     min-height: 150px;
     text-align: center;
     display: grid;
     place-items: center;
-    background: rgb(255, 255, 255);
+    background: rgb(3, 0, 92);
+    color: white;
     position: relative;
+    transition: all 0.2s cubic-bezier(0.1, 0.2, 0.25, 1.1);
 }
-.story-card::after {
+.story-card:hover {
+    background: linear-gradient(20deg, red, yellow);
+    color: black;
+   transform: scale(1.05);
+   border-radius: 2vh;
+}
+.story-card:hover::after, .story-card:hover::before {
+    display: none;
+}
+.story-card::before {
+    filter: blur(20px);
+}
+.story-card::after, .story-card::before {
     content: "";
     width: 105%;
-    height: 105%;
+    height: 120%;
+    border-radius: 2vh;
     position: absolute;
     background: linear-gradient(20deg, red, yellow);
     z-index: -1;
+}
+.story-card::before {
+    filter: blur(20px);
 }
 h3 {
     font-size: 2rem;
 }
 h4 {
     font-size:  1.2rem;
+}
+#vettel div {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    gap: 50px;
+    align-items: center;
+    padding-top: 80px;
+}
+#vettel img {
+    width: 90%;
+}
+#vettel {
+    font-size: 1.3rem;
+    color: white;
+}
+#vettel h3 {
+    text-align: center;
+}
+#vettel p {
+    text-align: justify;
 }
