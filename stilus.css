@@ -1,3 +1,24 @@
+/*F1-es betűtípus*/
+@font-face {
+    font-family: 'Formula1';
+    src: url('fonts/Formula1-Regular_web_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Formula1';
+    src: url('fonts/Formula1-Bold_web_0.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Formula1 Wide';
+    src: url('fonts/Formula1-Wide_web_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -25,6 +46,8 @@ header h1 {
     background-clip: text;
     color: transparent;
     text-transform: uppercase;
+    font-family: 'Formula1', sans-serif;
+    font-weight: bold;
 }
 header h2 {
     font-size: 4rem;
@@ -47,8 +70,9 @@ nav a {
     background-color: white;
     text-align: center;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     transition: all 0.2s cubic-bezier(0.1, 0.2, 0.25, 1);
+    font-family: 'Formula1', sans-serif;
 }
 nav a:hover {
     background-color: black;
@@ -113,6 +137,8 @@ article {
 }
 h3 {
     font-size: 2rem;
+    font-family: 'Formula1', sans-serif;
+    color: white;
 }
 h4 {
     font-size:  1.2rem;
