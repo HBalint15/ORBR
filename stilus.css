@@ -19,27 +19,48 @@
     font-weight: normal;
     font-style: normal;
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+html {}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(20deg, black, darkblue);
     overflow-x: hidden;
 }
+
+/* main {
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
+    max-height: 100vh;
+    scroll-behavior: smooth;
+} */
+
+/* #verstappen,
+#vettel,
+#now,
+#history {
+    scroll-snap-align: start;
+} */
+
 header {
     height: 85vh;
     width: 100%;
     align-content: center;
     background-image: linear-gradient(to bottom, rgb(0, 0, 148), rgb(0, 0, 53), black);
 }
+
 header div {
     width: 75%;
     margin: auto;
     text-align: center;
 }
+
 header h1 {
     font-size: 6rem;
     background: linear-gradient(45deg, red, yellow);
@@ -49,10 +70,12 @@ header h1 {
     font-family: 'Formula1', sans-serif;
     font-weight: bold;
 }
+
 header h2 {
     font-size: 4rem;
     color: white;
 }
+
 nav {
     background-color: black;
     display: grid;
@@ -63,6 +86,7 @@ nav {
     top: 0;
     z-index: 100000000000000;
 }
+
 nav a {
     display: grid;
     place-items: center;
@@ -74,12 +98,14 @@ nav a {
     transition: all 0.2s cubic-bezier(0.1, 0.2, 0.25, 1);
     font-family: 'Formula1', sans-serif;
 }
+
 nav a:hover {
     background-color: black;
     border: 1px solid yellow;
     font-size: 1.5rem;
     position: relative;
 }
+
 nav a:hover::after {
     position: absolute;
     background-color: yellow;
@@ -89,18 +115,22 @@ nav a:hover::after {
     content: "";
     filter: blur(5px);
 }
+
 nav img {
     width: 100%;
 }
+
 article {
     padding: 20px;
 }
+
 #story {
     padding: 60px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
 }
+
 .story-card {
     min-height: 150px;
     text-align: center;
@@ -111,19 +141,25 @@ article {
     position: relative;
     transition: all 0.2s cubic-bezier(0.1, 0.2, 0.25, 1.1);
 }
+
 .story-card:hover {
     background: linear-gradient(20deg, red, yellow);
     color: black;
-   transform: scale(1.05);
-   border-radius: 2vh;
+    /* transform: scale(1.05); */
+    border-radius: 2vh;
 }
-.story-card:hover::after, .story-card:hover::before {
+
+.story-card:hover::after,
+.story-card:hover::before {
     display: none;
 }
+
 .story-card::before {
     filter: blur(20px);
 }
-.story-card::after, .story-card::before {
+
+.story-card::after,
+.story-card::before {
     content: "";
     width: 105%;
     height: 120%;
@@ -132,17 +168,21 @@ article {
     background: linear-gradient(20deg, red, yellow);
     z-index: -1;
 }
+
 .story-card::before {
     filter: blur(20px);
 }
+
 h3 {
     font-size: 2rem;
     font-family: 'Formula1', sans-serif;
     color: white;
 }
+
 h4 {
-    font-size:  1.2rem;
+    font-size: 1.2rem;
 }
+
 #vettel div {
     display: grid;
     grid-template-columns: 1fr 0.5fr;
@@ -150,16 +190,53 @@ h4 {
     align-items: center;
     padding-top: 80px;
 }
+
 #vettel img {
     width: 90%;
 }
-#vettel {
+
+#vettel,
+#verstappen {
     font-size: 1.3rem;
     color: white;
 }
+
 #vettel h3 {
     text-align: center;
 }
-#vettel p {
+
+#vettel p,
+#verstappen p {
     text-align: justify;
+}
+
+#verstappen h3 {
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 750px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        font-size: 8px;
+    }
+    header h1 {
+        font-size: 3rem;
+    }
+    header h2 {
+        font-size: 1.8rem;
+    }
+    header {
+        height: 20vh;
+    }
+    article {
+        padding: 0;
+    }
+    nav, #story {
+        grid-template-columns: 1fr;
+    }
+    nav {
+        position: relative;
+    }
 }
