@@ -26,8 +26,6 @@
     padding: 0;
 }
 
-html {}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(20deg, black, darkblue);
@@ -183,7 +181,8 @@ h4 {
     font-size: 1.2rem;
 }
 
-#vettel div {
+#vettel div,
+#verstappen div {
     display: grid;
     grid-template-columns: 1fr 0.5fr;
     gap: 50px;
@@ -191,52 +190,141 @@ h4 {
     padding-top: 80px;
 }
 
-#vettel img {
+#verstappen div {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding-top: 80px;
+}
+
+#vettel img,
+#verstappen img {
     width: 90%;
+    margin: auto;
 }
 
 #vettel,
-#verstappen {
+#verstappen,
+#now {
     font-size: 1.3rem;
     color: white;
 }
 
-#vettel h3 {
+#vettel h3, #verstappen h3 {
     text-align: center;
 }
 
 #vettel p,
-#verstappen p {
+#verstappen p,
+#now p {
     text-align: justify;
 }
 
 #verstappen h3 {
     margin-bottom: 20px;
 }
+
+table {
+    color: white;
+    border-collapse: collapse;
+    margin: 25px auto 25px auto;
+    font-size: 1.5rem;
+    text-align: center;
+}
+thead {
+    background-color: white;
+
+}
+thead th {
+    border: 5px solid rgb(0, 0, 115);
+    color: rgb(0, 0, 115);
+}
+tbody {
+    background-color: rgb(0, 0, 115);
+}
+
+#tablazat_div {
+    overflow-x: auto;
+    position: relative;
+}
+
+table,
+td, tbody th {
+    border: 5px solid white;
+}
+tr:hover {
+    background-color: rgb(0, 0, 164);
+}
+thead tr:hover {
+    background-color: rgb(189, 189, 189);
+}
+#compare_main {
+    position: relative;
+}
+#compare_main::after {
+    background-color: rgb(0, 47, 255);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 86%;
+    top: 8%;
+    filter: blur(15px);
+    left: 0;
+    z-index: -100;
+}
+#now {
+    color: white;
+    padding-top: 80px;
+}
+#now h3 {
+    margin-bottom: 30px;
+}
+footer {
+    background-color: white;
+    color: darkblue;
+    text-align: center;
+}
+footer p:nth-child(2) {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
 @media screen and (max-width: 750px) {
     * {
         margin: 0;
         padding: 0;
     }
+
     html {
         font-size: 8px;
     }
+
     header h1 {
         font-size: 3rem;
     }
+
     header h2 {
         font-size: 1.8rem;
     }
+
     header {
         height: 20vh;
     }
+
     article {
         padding: 0;
     }
-    nav, #story {
+
+    nav,
+    #story {
         grid-template-columns: 1fr;
     }
+
     nav {
         position: relative;
+    }
+
+    #vettel div, #verstappen div {
+        grid-template-columns: 1fr;
     }
 }
