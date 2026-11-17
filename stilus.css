@@ -87,12 +87,14 @@ nav {
     padding: 10px;
     position: sticky;
     top: 0;
-    z-index: 100000000000000;
+    z-index: 9;
 }
+
 nav a:first-child {
     display: grid;
     place-items: center;
 }
+
 nav a:not(:first-child) {
     display: grid;
     border-radius: 5vw;
@@ -336,6 +338,17 @@ footer p:nth-child(2) {
     display: none;
 }
 
+#cursor_dot {
+    width: 35px;
+    height: 35px;
+    position: fixed;
+    z-index: 10;
+    top: var(--y);
+    left: var(--x);
+    background-image: radial-gradient(circle 15px at center, red, transparent);
+    pointer-events: none;
+}
+
 @media screen and (max-width: 940px) {
     nav {
         grid-template-columns: 1fr;
@@ -439,6 +452,8 @@ footer p:nth-child(2) {
             font-size: 2.5rem;
         }
 
-        h2 {font-size: 1.8rem;}
+        h2 {
+            font-size: 1.8rem;
+        }
     }
 }
