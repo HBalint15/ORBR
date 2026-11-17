@@ -95,9 +95,10 @@ nav a:first-child {
 }
 nav a:not(:first-child) {
     display: grid;
+    border-radius: 5vw;
     place-items: center;
-    color: rgb(255, 0, 0);
-    background-color: #e7e7e7;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(45deg, rgb(255, 38, 34) 10%, rgb(238, 255, 1) 50%);
     text-align: center;
     text-decoration: none;
     font-size: 1.5rem;
@@ -106,7 +107,7 @@ nav a:not(:first-child) {
 }
 
 nav a:not(:first-child):hover {
-    background-color: black;
+    background: black;
     color: white;
     border: 1px solid yellow;
     font-size: 1.6rem;
@@ -121,6 +122,7 @@ nav a:not(:first-child):hover::after {
     z-index: -100;
     content: "";
     filter: blur(5px);
+    border-radius: 15vw;
 }
 
 nav img {
@@ -330,7 +332,7 @@ footer p:nth-child(2) {
     padding-bottom: 20px;
 }
 
-aside {
+#to_top {
     display: none;
 }
 
@@ -374,7 +376,7 @@ aside {
         height: 40vh;
     }
 
-    aside {
+    #to_top {
         display: block;
         position: sticky;
         top: 15vh;
